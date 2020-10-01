@@ -32,8 +32,10 @@ const port = 3000;
 // the view should display just the names of each mission
 // display the mission names as <li> in a <ul> with the class name "missions"
 app.get('/' , (req,res) => {
-  // res.render('index');
-  res.send(marsMissions);
+  res.render('index' , {
+    marsMissions: marsMissions,
+  });
+  // res.send(marsMissions);
 });
 
 

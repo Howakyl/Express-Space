@@ -7,5 +7,15 @@
 </head>
 <body>
     <h1>Express Space Home</h1>
+
+    <ul>
+    <% for (let i = 0; i < marsMissions.length; i++) { %>
+        <li style="margin-bottom: 20px;">
+          <a href="/models/marsMissions.js <%=i %>">
+            <%= marsMissions[i].name %>
+          </a>    
+        </li>
+      <% } %>
+    </ul>
 </body>
 </html>
