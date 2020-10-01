@@ -23,10 +23,6 @@ app.set('view engine' , 'ejs');
 // PORT
 const port = 3000;
 
-// DATA - put into marsMissions.js file inside of a models folder, for module.exports
-// remember to require it in the server
-// marsMissions = require('./models/marsMissions');
-
 // INDEX Route
 // send data to 'missions/index.ejs' view
 // the view should display just the names of each mission
@@ -42,7 +38,14 @@ app.get('/' , (req,res) => {
 // SHOW Route
 // send data to 'missions/show.ejs' view
 // the view should display all the data for a single mission
+app.get('/:marsMissionsIndex' , (req,res) => {
+  const marsMissionsIndex = req.params.marsMissionsIndex;
+  const marsMission = marsMissions[marsMissionsIndex];
 
+  res.render('./missions/show' , {
+    marsMissions:marsMission,
+  });
+});
 
 
 // LISTENER
