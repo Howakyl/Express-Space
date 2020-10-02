@@ -31,7 +31,6 @@ app.get('/' , (req,res) => {
   res.render('index' , {
     marsMissions: marsMissions,
   });
-  // res.send(marsMissions);
 });
 
 
@@ -43,7 +42,7 @@ app.get('/:marsMissionsIndex' , (req,res) => {
   const marsMission = marsMissions[marsMissionsIndex];
 
   res.render('./missions/show' , {
-    marsMission: marsMission,
+    marsMissions: marsMission,
   });
 });
 

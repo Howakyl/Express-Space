@@ -6,13 +6,18 @@
     <title>Show Space</title>
 </head>
 <body>
+    <nav>
+        <a href="/">Home</a>
+    </nav>
+
     <h1>Show Express Space</h1>
 
-    <h4><strong>Name:</strong> <%= marsMission.name %></h4>
-    <p><strong>Launch Date:</strong> <%= marsMission.launchDate %></p>
-    <p><strong>Operator:</strong> <%= marsMission.operator %></p>
-    <p><strong>Mission Type:</strong> <%= marsMission.missionType %></p>
-    <p><strong>image:</strong> <%= marsMission.img %></p>
+    <h4><strong>Name:</strong> <%= marsMissions.name %></h4>
+    <p><strong>Launch Date:</strong> <%= marsMissions.launchDate %></p>
+    <p><strong>Operator:</strong> <%= marsMissions.operator %></p>
+    <p><strong>Mission Type:</strong> <%= marsMissions.missionType %></p>
+    <p><strong>image:</strong></p>
+    <img src="<%= marsMissions.img %>">
 
     
 </body>
