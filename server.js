@@ -27,17 +27,18 @@ const port = 3000;
 // send data to 'missions/index.ejs' view
 // the view should display just the names of each mission
 // display the mission names as <li> in a <ul> with the class name "missions"
-app.get('/' , (req,res) => {
-  res.render('index' , {
+app.get('/missions' , (req,res) => {
+  res.render('./missions/indexMission' , {
     marsMissions: marsMissions,
   });
+  // res.send('hi')
 });
 
 
 // SHOW Route
 // send data to 'missions/show.ejs' view
 // the view should display all the data for a single mission
-app.get('/:marsMissionsIndex' , (req,res) => {
+app.get('/missions/:marsMissionsIndex' , (req,res) => {
   const marsMissionsIndex = req.params.marsMissionsIndex;
   const marsMission = marsMissions[marsMissionsIndex];
 
@@ -46,7 +47,11 @@ app.get('/:marsMissionsIndex' , (req,res) => {
   });
 });
 
-
+app.get('/' , (req,res) => {
+  res.render('index' , {
+    marsMissions: marsMissions,
+  });
+})
 // LISTENER
 app.listen(port, function() {
   console.log('Missions to Mars running on port: ', port);

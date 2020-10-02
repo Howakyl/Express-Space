@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/missions">All Missions</a>
+    </nav>
+
+    <h1>Express Space Home</h1>
+
+    <ul>
+    <% for (let i = 0; i < marsMissions.length; i++) { %>
+        <li style="margin-bottom: 20px;">
+          <a href="missions/<%=i %>">
+            <%= marsMissions[i].name %>
+          </a>    
+        </li>
+      <% } %>
+    </ul>
+</body>
+</html>
